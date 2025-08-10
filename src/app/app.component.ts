@@ -9,7 +9,7 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
- display: string = '';
+   display: string = '';
 currentValue: string = '';
 firstValue: number | null = null;
 operator: string = '';
@@ -50,7 +50,7 @@ setOperator(op: string) {
   this.operator = op;
   this.display += op;
   this.waitingForSecond = true;
-}
+}  
 
 calculate() {
   if (this.operator === '' || this.currentValue === '') return;
@@ -108,5 +108,6 @@ calculateIntermediate() {
   this.firstValue = result;
   this.currentValue = '';
 }
+
 
 }
