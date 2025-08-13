@@ -1,37 +1,40 @@
-<div class="calculator">
-  <input type="text" class="display" [(ngModel)]="display" disabled>
+<div class="wrapper">
+  <div class="calculator">
+    <input type="text" class="display" [(ngModel)]="display" disabled>
 
-  <div class="row">
-    <button class="Operator" (click)="clear()">C</button>
-    <button class="Operator" (click)="delete()">DEL</button>
-    <button class="Operator" (click)="setOperator('%')">%</button>
-    <button class="Operator" (click)="setOperator('/')">÷</button>
+    <div class="row">
+      <button class="Operator" (click)="clear()">C</button>
+      <button class="Operator" (click)="delete()">DEL</button>
+      <button class="Operator" (click)="setOperator('%')">%</button>
+      <button class="Operator" (click)="setOperator('/')">÷</button>
+    </div>
+
+    <div class="row">
+      <button class="number" (click)="append('7')">7</button>
+      <button class="number" (click)="append('8')">8</button>
+      <button class="number" (click)="append('9')">9</button>
+      <button class="Operator" class="Operator" (click)="setOperator('*')">*</button>
+    </div>
+
+    <div class="row">
+      <button class="number" (click)="append('4')">4</button>
+      <button class="number" (click)="append('5')">5</button>
+      <button class="number" (click)="append('6')">6</button>
+      <button class="Operator" (click)="setOperator('-')">-</button>
+    </div>
+
+    <div class="row">
+      <button class="number" (click)="append('1')">1</button>
+      <button class="number" (click)="append('2')">2</button>
+      <button class="number" (click)="append('3')">3</button>
+      <button class="Operator" (click)="setOperator('+')">+</button>
+    </div>
+
+    <div class="row">
+      <button class="number" (click)="append('.')">.</button>
+      <button class="number" (click)="append('0')">0</button>
+      <button class="equal" (click)="calculate()">=</button>
+    </div>
+  </div>
   </div>
 
-  <div class="row">
-    <button class="number" (click)="append('7')">7</button>
-    <button class="number" (click)="append('8')">8</button>
-    <button class="number" (click)="append('9')">9</button>
-    <button class="Operator" class="Operator" (click)="setOperator('*')">*</button>
-  </div>
-
-  <div class="row">
-    <button class="number" (click)="append('4')">4</button>
-    <button class="number" (click)="append('5')">5</button>
-    <button class="number" (click)="append('6')">6</button>
-    <button class="Operator" (click)="setOperator('-')">-</button>
-  </div>
-
-  <div class="row">
-    <button class="number" (click)="append('1')">1</button>
-    <button class="number" (click)="append('2')">2</button>
-    <button  class="number"(click)="append('3')">3</button>
-    <button class="Operator" (click)="setOperator('+')">+</button>
-  </div>
-
-  <div class="row">
-        <button  class="number" (click)="append('.')">.</button>
-       <button class="number" (click)="append('0')">0</button>
-    <button class="equal" (click)="calculate()">=</button>
-  </div>
-</div>

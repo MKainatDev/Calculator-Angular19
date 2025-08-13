@@ -1,3 +1,12 @@
+
+.wrapper {
+  background-color: #ccefff;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .calculator {
   width: 300px;
   margin: 100px auto;
@@ -38,18 +47,21 @@ button {
   cursor: pointer;
   transition: 0.2s;
 }
-.number{
+
+.number {
   background-color: #111827;
 }
-.Operator{
+
+.Operator {
   background-color: #10bebeea;
 }
 
 button:hover {
   background-color: #141d30;
 }
-.Operator:hover{
-    background-color: #058383ea;
+
+.Operator:hover {
+  background-color: #058383ea;
 }
 
 .equal {
