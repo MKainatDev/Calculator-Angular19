@@ -1,15 +1,7 @@
 
-.wrapper {
-  background-color: #ccefff;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 .calculator {
   width: 300px;
-  margin: 100px auto;
   background-color: #000505fd;
   padding: 20px;
   border-radius: 20px;
