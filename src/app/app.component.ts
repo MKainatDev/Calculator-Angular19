@@ -1,10 +1,12 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [FormsModule],
+  imports: [CommonModule,FormsModule],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
@@ -16,6 +18,7 @@ export class AppComponent {
   waitingForSecond: boolean = false;
 
   append(value: string) {
+    
     if (this.waitingForSecond) {
       this.currentValue = value;
       this.waitingForSecond = false;
@@ -37,7 +40,6 @@ export class AppComponent {
     if (this.display.length === 0) return;
 
     const lastChar = this.display.charAt(this.display.length - 1);
-
     this.display = this.display.slice(0, -1);
 
     if (['+', '-', '*', '/', '%'].includes(lastChar)) {
@@ -50,10 +52,10 @@ export class AppComponent {
     }
   }
 
-
   setOperator(op: string) {
     if (this.currentValue === '') return;
 
+    // اگر پہلے سے operator لگا ہے تو intermediate result calculate کریں
     if (this.operator && this.firstValue !== null && !this.waitingForSecond) {
       this.calculateIntermediate();
     } else {
@@ -89,13 +91,13 @@ export class AppComponent {
         break;
     }
 
-    const finalResult = isNaN(result) ? 'Error' : result.toString();
-    this.display += '=' + finalResult;
-    this.currentValue = finalResult;
+    this.display = result.toString();
+    this.currentValue = result.toString();
     this.firstValue = null;
     this.operator = '';
     this.waitingForSecond = false;
   }
+
   calculateIntermediate() {
     const secondValue = parseFloat(this.currentValue);
     let result = 0;
@@ -118,9 +120,8 @@ export class AppComponent {
         break;
     }
 
+    // اگلی calculation کے لیے result کو firstValue بنا دیں
     this.firstValue = result;
     this.currentValue = '';
   }
-
-
 }
